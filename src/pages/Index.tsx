@@ -82,7 +82,7 @@ const Index = () => {
                 cmsKey="sobre-title"
                 as="h2"
                 defaultValue="especialistas em digital biz: marketing estratégico para fazer seu negócio crescer."
-                className="text-3xl md:text-4xl font-bold font-montez mb-4 text-splash2 lowercase"
+                className="text-3xl md:text-4xl font-bold font-pacifico mb-4 text-splash2 lowercase"
               />
               <EditableText
                 cmsKey="sobre-desc"
@@ -107,7 +107,7 @@ const Index = () => {
                 cmsKey={sessao.titleKey}
                 as="h2"
                 defaultValue={sessao.defaultTitle.toLowerCase()}
-                className={`text-3xl md:text-4xl font-bold font-montez mb-4 text-${sessao.color} lowercase`}
+                className={`text-3xl md:text-4xl font-bold font-pacifico mb-4 text-${sessao.color} lowercase`}
               />
               <EditableText
                 cmsKey={sessao.descKey}
