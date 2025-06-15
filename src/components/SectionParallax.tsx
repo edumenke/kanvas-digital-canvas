@@ -1,8 +1,8 @@
+
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import EditableImage from "./EditableImage";
 import EditableText from "./EditableText";
-import SplashFloat from "./SplashFloat";
 
 type Props = {
   id: string;
@@ -48,18 +48,6 @@ const SectionParallax = ({
           className="hidden"
         />
       </div>
-      {/* Splash flutuante, só para sessões (não home, não contato) */}
-      {id !== "home" && id !== "contato" && (
-        <SplashFloat
-          className={`z-0 ${reverse ? "right-4 top-7 md:right-24" : "left-4 top-9 md:left-24"}
-            w-32 md:w-40`}
-          style={{
-            opacity: 0.35,
-            top: "3%",
-            ...(reverse ? { right: 0 } : { left: 0 }),
-          }}
-        />
-      )}
       <motion.div
         className="relative z-10 w-full max-w-5xl flex flex-col md:flex-row items-center gap-10 md:gap-24"
         initial={{ opacity: 0, y: 60 }}
