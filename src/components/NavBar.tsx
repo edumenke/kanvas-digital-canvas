@@ -15,8 +15,17 @@ const NavBar = () => {
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white/90 shadow transition backdrop-blur-xl border-b border-gray-200">
       <nav className="container flex justify-between items-center h-20">
-        <a href="#home" className="flex items-center gap-2 font-display text-2xl font-bold text-primary hover:text-accent transition">
-          Kanvas
+        <a
+          href="#home"
+          className="flex items-center gap-2 font-display transition h-full"
+          aria-label="Kanvas - Home"
+        >
+          <img
+            src="/lovable-uploads/e04de6ee-7ef1-4d03-becf-264b5fcf4b2c.png"
+            alt="Kanvas digital Biz Logo"
+            style={{ maxHeight: "52px", width: "auto" }}
+            className="object-contain block transition hover:scale-105"
+          />
         </a>
         <ul className="flex gap-8 items-center">
           {links.map(link => (
@@ -37,3 +46,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
