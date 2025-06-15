@@ -43,6 +43,21 @@ const SES = [
   }
 ];
 
+// Splash image style utility
+const SplashTitle = ({ children }: { children: React.ReactNode }) => (
+  <div className="relative inline-block w-fit">
+    <img
+      src="/lovable-uploads/ee21ead5-356b-4d9d-979f-570d9fa03072.png"
+      aria-hidden="true"
+      className="absolute -top-4 left-1/2 -translate-x-1/2 w-[180px] md:w-[240px] opacity-40 pointer-events-none select-none"
+      style={{ zIndex: 0 }}
+      alt=""
+      draggable={false}
+    />
+    <span className="relative z-10">{children}</span>
+  </div>
+);
+
 const Index = () => {
   return (
     <LocalCMSProvider>
@@ -56,12 +71,14 @@ const Index = () => {
         <section className="bg-background py-16">
           <div className="container flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1">
-              <EditableText
-                cmsKey="sobre-title"
-                as="h2"
-                defaultValue="Especialistas em Digital Biz: Marketing estratégico para fazer seu negócio crescer."
-                className="text-3xl md:text-4xl font-bold font-display mb-4"
-              />
+              <SplashTitle>
+                <EditableText
+                  cmsKey="sobre-title"
+                  as="h2"
+                  defaultValue="Especialistas em Digital Biz: Marketing estratégico para fazer seu negócio crescer."
+                  className="text-3xl md:text-4xl font-bold font-display mb-4"
+                />
+              </SplashTitle>
               <EditableText
                 cmsKey="sobre-desc"
                 as="p"
@@ -81,12 +98,14 @@ const Index = () => {
             reverse={sessao.reverse}
           >
             <div className="flex-1 min-w-[300px]">
-              <EditableText
-                cmsKey={sessao.titleKey}
-                as="h2"
-                defaultValue={sessao.defaultTitle}
-                className="text-3xl md:text-4xl font-bold font-display mb-4"
-              />
+              <SplashTitle>
+                <EditableText
+                  cmsKey={sessao.titleKey}
+                  as="h2"
+                  defaultValue={sessao.defaultTitle}
+                  className="text-3xl md:text-4xl font-bold font-display mb-4"
+                />
+              </SplashTitle>
               <EditableText
                 cmsKey={sessao.descKey}
                 as="p"
@@ -99,12 +118,14 @@ const Index = () => {
         {/* Seção Contato */}
         <section id="contato" className="py-28 bg-gradient-to-b from-background via-secondary to-secondary/80 relative">
           <div className="container">
-            <EditableText
-              cmsKey="contato-title"
-              as="h2"
-              defaultValue="Vamos conversar sobre seu próximo projeto digital?"
-              className="text-3xl font-bold font-display text-center mb-7"
-            />
+            <SplashTitle>
+              <EditableText
+                cmsKey="contato-title"
+                as="h2"
+                defaultValue="Vamos conversar sobre seu próximo projeto digital?"
+                className="text-3xl font-bold font-display text-center mb-7"
+              />
+            </SplashTitle>
             <LeadForm />
           </div>
         </section>
