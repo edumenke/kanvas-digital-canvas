@@ -1,8 +1,8 @@
 
-import React, { useRef, useEffect } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import EditableImage from "./EditableImage";
-import EditableText from "./EditableText";
+import ScrollReveal from "./ScrollReveal";
 
 type Props = {
   id: string;
@@ -54,7 +54,28 @@ const SectionParallax = ({
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, delay: 0.1 }}
       >
-        {children}
+        {/* 
+          Modificação: envolver o primeiro filho (título) com ScrollReveal.
+          Assumimos que o primeiro filho é o bloco de textos, e o título é o primeiro filho 
+        */}
+        {React.Children.map(children, (child, i) => {
+          if (
+            React.isValidElement(child) &&
+            i === 0 &&
+            React.Children.count(child.props.children) >= 1
+          ) {
+            // Envolve o título com ScrollReveal
+            const childChildren = React.Children.toArray(child.props.children);
+            const title = childChildren[0];
+            const rest = childChildren.slice(1);
+
+            return React.cloneElement(child, {}, [
+              <ScrollReveal key="scrollreveal-title">{title}</ScrollReveal>,
+              ...rest
+            ]);
+          }
+          return child;
+        })}
       </motion.div>
     </section>
   );
