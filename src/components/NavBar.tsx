@@ -23,8 +23,8 @@ const NavBar = () => {
             className="h-12 w-auto drop-shadow"
             style={{ marginRight: "0.5rem" }}
           />
-          <span className="font-pacifico text-2xl text-splash2 transition group-hover:text-splash5">
-            Kanvas
+          <span className="font-montez text-2xl text-splash2 transition group-hover:text-splash5 lowercase">
+            kanvas
           </span>
         </a>
         <ul className="flex gap-8 items-center">
@@ -32,9 +32,9 @@ const NavBar = () => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-inter text-lg hover:text-splash3 transition px-2 py-1 relative"
+                className="font-montez text-lg hover:text-splash3 transition px-2 py-1 relative lowercase"
               >
-                {link.label}
+                {link.label.toLowerCase()}
               </a>
             </li>
           ))}

@@ -81,8 +81,8 @@ const Index = () => {
               <EditableText
                 cmsKey="sobre-title"
                 as="h2"
-                defaultValue="Especialistas em Digital Biz: Marketing estratégico para fazer seu negócio crescer."
-                className="text-3xl md:text-4xl font-bold font-pacifico mb-4 text-splash2"
+                defaultValue="especialistas em digital biz: marketing estratégico para fazer seu negócio crescer."
+                className="text-3xl md:text-4xl font-bold font-montez mb-4 text-splash2 lowercase"
               />
               <EditableText
                 cmsKey="sobre-desc"
@@ -106,8 +106,8 @@ const Index = () => {
               <EditableText
                 cmsKey={sessao.titleKey}
                 as="h2"
-                defaultValue={sessao.defaultTitle}
-                className={`text-3xl md:text-4xl font-bold font-pacifico mb-4 text-${sessao.color}`}
+                defaultValue={sessao.defaultTitle.toLowerCase()}
+                className={`text-3xl md:text-4xl font-bold font-montez mb-4 text-${sessao.color} lowercase`}
               />
               <EditableText
                 cmsKey={sessao.descKey}

@@ -20,7 +20,8 @@ export default {
       fontFamily: {
         playfair: ["'Playfair Display'", "serif"],
         inter: ["Inter", "sans-serif"],
-        pacifico: ["Pacifico", "cursive"], // novo
+        pacifico: ["Pacifico", "cursive"],
+        montez: ["Montez", "cursive"], // nova fonte manuscrita
       },
       colors: {
         border: 'hsl(var(--border))',
