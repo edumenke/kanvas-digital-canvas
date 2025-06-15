@@ -75,6 +75,7 @@ const LeadForm = () => {
       onSubmit={onSubmit}
     >
       <h3 className="text-2xl font-bold font-display mb-3">Entre em contato</h3>
+      
       <div className="flex flex-col gap-2">
         <label htmlFor="webhookUrl" className="text-xs text-gray-600">
           Webhook do Make (Integromat)
@@ -91,6 +92,7 @@ const LeadForm = () => {
         />
         <span className="text-xs text-gray-500">Este campo só você vê – visitantes não verão nem precisam preencher.</span>
       </div>
+
       <div className="flex flex-col gap-2">
         <label htmlFor="nome" className="text-sm text-gray-700">Nome</label>
         <input
@@ -103,6 +105,7 @@ const LeadForm = () => {
           className="px-4 py-2 rounded border bg-gray-50"
         />
       </div>
+
       <div className="flex flex-col gap-2">
         <label htmlFor="email" className="text-sm text-gray-700">E-mail</label>
         <input
@@ -115,6 +118,7 @@ const LeadForm = () => {
           className="px-4 py-2 rounded border bg-gray-50"
         />
       </div>
+
       <div className="flex flex-col gap-2">
         <label htmlFor="telefone" className="text-sm text-gray-700">Telefone</label>
         <input
@@ -128,16 +132,19 @@ const LeadForm = () => {
           placeholder="(99) 99999-9999"
         />
       </div>
-      <button
-        type="submit"
-        className="bg-primary px-6 py-2 rounded font-bold text-white hover:bg-primary/90 transition disabled:opacity-60"
-        disabled={loading}
-      >
-        {loading ? "Enviando..." : "Enviar"}
-      </button>
+
+      {/* Botão de envio com espaçamento extra e destaque */}
+      <div className="mt-4">
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={loading}
+        >
+          {loading ? "Enviando..." : "Enviar Contato"}
+        </button>
+      </div>
     </form>
   );
 };
 
 export default LeadForm;
-
