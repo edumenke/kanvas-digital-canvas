@@ -7,6 +7,22 @@ import EditableText from "@/components/EditableText";
 import AdminToggle from "@/components/AdminToggle";
 import LeadForm from "@/components/LeadForm";
 
+// SVG Splash decorativo (topo)
+const SplashBg = () => (
+  <svg
+    viewBox="0 0 1440 350"
+    className="absolute inset-0 w-full h-[340px] pointer-events-none z-0"
+    aria-hidden="true"
+    style={{ top: 0, left: 0 }}
+  >
+    <ellipse cx="300" cy="120" rx="210" ry="60" fill="#7AD657" fillOpacity="0.20"/>
+    <ellipse cx="900" cy="60" rx="250" ry="70" fill="#8F61FF" fillOpacity="0.18"/>
+    <ellipse cx="1210" cy="180" rx="120" ry="40" fill="#3EB1E6" fillOpacity="0.20"/>
+    <ellipse cx="540" cy="180" rx="140" ry="50" fill="#FFE065" fillOpacity="0.16"/>
+    <ellipse cx="780" cy="250" rx="200" ry="45" fill="#FF6161" fillOpacity="0.13"/>
+  </svg>
+);
+
 const SES = [
   {
     id: "performance",
@@ -17,7 +33,8 @@ const SES = [
     defaultTitle: "Performance",
     defaultDesc:
       "Otimizamos canais digitais através de análises de dados avançados, gestão de campanhas, SEO, mídia de performance e CRO. Resultados mensuráveis de verdade.",
-    reverse: false
+    reverse: false,
+    color: "splash1"
   },
   {
     id: "branding",
@@ -28,7 +45,8 @@ const SES = [
     defaultTitle: "Branding",
     defaultDesc:
       "Construímos marcas fortes para o ambiente digital: identidade visual, posicionamento, experiência de marca e comunicação coerente para diferenciar seu negócio.",
-    reverse: true
+    reverse: true,
+    color: "splash2"
   },
   {
     id: "user-experience",
@@ -39,7 +57,8 @@ const SES = [
     defaultTitle: "User Experience",
     defaultDesc:
       "Mapeamos jornadas, desenvolvemos protótipos, testamos e aplicamos métodos de design thinking para criar experiências digitais sedutoras e intuitivas.",
-    reverse: false
+    reverse: false,
+    color: "splash3"
   }
 ];
 
@@ -47,12 +66,15 @@ const Index = () => {
   return (
     <LocalCMSProvider>
       <NavBar />
-      <main className="mt-20 w-full overflow-x-hidden bg-background text-foreground font-inter">
-        {/* Home Hero/Banner */}
-        <section id="home">
-          <HeroCarousel />
-        </section>
-        {/* Descritivo principal sobre a Kanvas */}
+      <main className="mt-20 w-full bg-background text-foreground font-inter relative">
+        {/* Splash SVG decorativo topo */}
+        <div className="relative" style={{ minHeight: "340px" }}>
+          <SplashBg />
+          <section id="home" className="relative z-10">
+            <HeroCarousel />
+          </section>
+        </div>
+        {/* Descritivo principal sobre a Kanvas, com título personalizado */}
         <section className="bg-background py-16">
           <div className="container flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1">
@@ -60,7 +82,7 @@ const Index = () => {
                 cmsKey="sobre-title"
                 as="h2"
                 defaultValue="Especialistas em Digital Biz: Marketing estratégico para fazer seu negócio crescer."
-                className="text-3xl md:text-4xl font-bold font-display mb-4"
+                className="text-3xl md:text-4xl font-bold font-pacifico mb-4 text-splash2"
               />
               <EditableText
                 cmsKey="sobre-desc"
@@ -85,7 +107,7 @@ const Index = () => {
                 cmsKey={sessao.titleKey}
                 as="h2"
                 defaultValue={sessao.defaultTitle}
-                className="text-3xl md:text-4xl font-bold font-display mb-4"
+                className={`text-3xl md:text-4xl font-bold font-pacifico mb-4 text-${sessao.color}`}
               />
               <EditableText
                 cmsKey={sessao.descKey}
@@ -97,13 +119,13 @@ const Index = () => {
           </SectionParallax>
         ))}
         {/* Seção Contato */}
-        <section id="contato" className="py-28 bg-gradient-to-b from-background via-secondary to-secondary/80 relative">
+        <section id="contato" className="py-28 bg-gradient-to-b from-background via-splash1/10 to-splash3/40 relative">
           <div className="container">
             <EditableText
               cmsKey="contato-title"
               as="h2"
               defaultValue="Vamos conversar sobre seu próximo projeto digital?"
-              className="text-3xl font-bold font-display text-center mb-7"
+              className="text-3xl font-bold font-pacifico text-center mb-7 text-splash5"
             />
             <LeadForm />
           </div>
