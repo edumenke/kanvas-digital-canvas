@@ -17,7 +17,7 @@ const SectionParallax = ({
   id,
   defaultImg,
   cmsImgKey,
-  bgOpacity = 0.24,
+  bgOpacity = 0.65,
   children,
   className = "",
   reverse = false

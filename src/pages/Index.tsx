@@ -80,18 +80,18 @@ const Index = () => {
             cmsImgKey={sessao.imgCmsKey}
             reverse={sessao.reverse}
           >
-            <div className="flex-1 min-w-[300px]">
+            <div className="flex-1 min-w-[300px] bg-black/40 backdrop-blur-sm p-8 rounded-lg">
               <EditableText
                 cmsKey={sessao.titleKey}
                 as="h2"
                 defaultValue={sessao.defaultTitle}
-                className="text-3xl md:text-4xl font-bold font-display mb-4"
+                className="text-3xl md:text-4xl font-bold font-display mb-4 text-white drop-shadow-lg"
               />
               <EditableText
                 cmsKey={sessao.descKey}
                 as="p"
                 defaultValue={sessao.defaultDesc}
-                className="text-lg text-background/85"
+                className="text-lg text-white drop-shadow-md"
               />
             </div>
           </SectionParallax>
